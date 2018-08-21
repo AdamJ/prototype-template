@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mindreeper2420/prototype-template.svg?branch=master)](https://travis-ci.com/mindreeper2420/prototype-template)
+
 # Prototype Template
 
 This is a template for creating prototypes. If you wish to use it, please download or fork this repo.
@@ -16,9 +18,10 @@ This is a template for creating prototypes. If you wish to use it, please downlo
 
 **Framework**
 
-- Gulp
-- stylelint
-- travis (rewrite this configuration)
-- Bootstrap 4
-- Sass
+- [Gulp](https://gulpjs.com/)
+- [Stylelint](https://stylelint.io/)
+- [Travis-ci](https://travis-ci.com/)
+- [PatternFly 3](https://github.com/patternfly/patternfly)
+- [Sass](http://sass-lang.com/guide)
 - JS
+- [Pug](https://github.com/pugjs/pug)

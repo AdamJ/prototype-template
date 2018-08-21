@@ -1,12 +1,15 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
+var cssnano = require('cssnano');
 var header = require('gulp-header');
-var rename = require("gulp-rename");
-var notify = require('gulp-notify');
-var pkg = require('./package.json');
-var cssmin = require('gulp-cssmin');
 var postcss = require('gulp-postcss');
+var pkg = require('./package.json');
+var plumber = require('gulp-plumber');
+var pug = require('gulp-pug');
+var rename = require("gulp-rename");
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 //
 // Set the banner content
