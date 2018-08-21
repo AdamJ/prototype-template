@@ -47,13 +47,32 @@ gulp.task('sass', ['lint-sass'], function () {
     .pipe(browserSync.reload({
       stream: true
     }))
-    .pipe(notify("CSS compiled")); // remove this line if you do not want notifications
 });
 
 // ensure sass finishes, reload browser
 gulp.task('sass-watch', ['sass'], function (done) {
   browserSync.reload();
   done();
+});
+
+// compile custom javascript file
+gulp.task('js', function() {
+  return gulp.src("dev/js/*.js")
+  .pipe(header(banner, { pkg: pkg }))
+  .pipe(gulp.dest('js'))
+  .pipe(browserSync.reload({
+    stream: true
+  }));
+});
+
+// compile pug templates
+gulp.task('views', function () {
+  return gulp.src('./src/*.pug')
+  .pipe(pug({
+    doctype: 'html',
+    pretty: true
+  }))
+  .pipe(gulp.dest('./'));
 });
 
 // Configure the browserSync task
@@ -70,11 +89,15 @@ gulp.task('serve', ['sass'], function () {
   browserSync.init({
     server: {
       baseDir: "./"
-    }
+    },
+    reloadOnRestart: true,
+    notify: false // prevent the browserSync notification from appearing
   });
   gulp.watch('sass/*.scss', ['sass-watch']);
+  gulp.watch('src/**/*.pug', ['views']);
+  gulp.watch('dev/js/*.js', ['js']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 // Run everything
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'js', 'views']);
