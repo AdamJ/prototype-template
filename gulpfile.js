@@ -22,37 +22,29 @@ var banner = ['/*!\n',
   ''
 ].join('');
 
-gulp.task('lint-sass', function lintCssTask() {
-  const gulpStylelint = require('gulp-stylelint');
-
-  return gulp
-    .src('sass/*.scss')
-    .pipe(gulpStylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
+gulp.task('sass', function() {
+  return gulp.src('sass/**/*.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(header(banner, { pkg: pkg }))
+  .pipe(gulp.dest('css'))
+  .pipe(browserSync.reload({
+    stream: true
+  }));
 });
 
-gulp.task('sass', ['lint-sass'], function () {
-  return gulp.src("sass/*.scss")
-    .pipe(sass().on('error', sass.logError))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
-// ensure sass finishes, reload browser
-gulp.task('sass-watch', ['sass'], function (done) {
-  browserSync.reload();
-  done();
+// @ts-ignore
+gulp.task('css', ['sass'], function() {
+  var plugins = [
+    autoprefixer({browsers: ['last 1 version']}),
+    cssnano()
+  ];
+  return gulp.src('./css/site.css')
+    .pipe(sourcemaps.init())
+    .pipe(postcss(plugins))
+    .pipe(sourcemaps.write())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./css'))
+    .pipe(clean('./css/site.css'));
 });
 
 // compile custom javascript file
@@ -81,9 +73,23 @@ gulp.task('browserSync', function () {
     server: {
       baseDir: ''
     },
-  })
+    ui: {
+      port: 8001 // customize port for browserSync UI
+    },
+    port: 8080, // use 8080 to prevent other localhost conflicts
+    reloadOnRestart: true,
+    notify: false // prevent the browserSync notification from appear. Set to 'true' to show notification
+  });
 });
 
+// ensure scss finishes, reload browser
+// @ts-ignore
+gulp.task('sass-watch', ['css'], function (done) {
+  browserSync.reload();
+  done();
+});
+
+// @ts-ignore
 gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./README.md').pipe(gulp.dest('./dist'));
   gulp.src('./package.json').pipe(gulp.dest('./dist'));
@@ -99,22 +105,28 @@ gulp.task('clean-dist', function () {
     .pipe(clean());
 });
 
+// @ts-ignore
 gulp.task('build', ['copy-source']);
 
 // Dev task with browserSync
-gulp.task('serve', ['sass'], function () {
+// @ts-ignore
+gulp.task('serve', ['css', 'js'], function () {
   browserSync.init({
     server: {
       baseDir: "./"
     },
+    ui: {
+      port: 8001 // customize port for browserSync UI
+    },
+    port: 8080, // use 8080 to prevent conflicts with other localhosts
     reloadOnRestart: true,
     notify: false // prevent the browserSync notification from appearing
   });
   gulp.watch('sass/*.scss', ['sass-watch']);
   gulp.watch('src/**/*.pug', ['views']);
-  gulp.watch('dev/js/*.js', ['js']);
+  gulp.watch('js/*.js', ['js']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 // Run everything
-gulp.task('default', ['sass', 'js', 'views']);
+gulp.task('default', ['css', 'js', 'views']);
