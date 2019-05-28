@@ -3,64 +3,66 @@
   <head>
     <meta charset="utf-8">
     <title>Prototype Template</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.54.1/css/patternfly.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.54.1/css/patternfly.min.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="css/site.min.css">
+    <link rel="stylesheet" href="css/patternfly.min.css">
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-pf" role="navigation">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/assets/img/brand.svg" alt="PatternFly Enterprise Application"></a>
-      </div>
-      <div class="collapse navbar-collapse navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-utility">
-          <li class="dropdown">
-            <button class="btn btn-link nav-item-iconic" id="horizontalDropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="fa pficon-help dropdown-title" title="Help"></span></button>
-            <ul class="dropdown-menu" aria-labelledby="horizontalDropdownMenu1">
-              <li><a href="#0">Help</a></li>
-              <li><a href="#0">About</a></li>
+    <h1 class="pf-screen-reader">Prototype template</h1>
+    <div class="pf-c-page"><a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main-content-page-layout"></a>
+      <div class="pf-c-page__header" role="banner">
+        <div class="pf-c-page__header-brand"><a class="pf-c-page__header-brand-link"><img class="pf-c-brand" src="/assets/images/AdamJJolicoeur_brand.png" alt="brand logo"></a></div>
+        <div class="pf-c-page__header-nav">
+          <nav class="pf-c-nav pf-m-end" id="page-layout-horizontal-nav" aria-label="Global navigation">
+            <ul class="pf-c-nav__horizontal-list">
+              <li class="pf-c-nav__item"><a class="pf-c-nav__link" href="#">Link</a></li>
+              <li class="pf-c-nav__item"><a class="pf-c-nav__link" href="#">Link</a></li>
+              <li class="pf-c-nav__item"><a class="pf-c-nav__link" href="#">Link</a></li>
+              <li class="pf-c-nav__item"><a class="pf-c-nav__link" href="#">Link</a></li>
             </ul>
-          </li>
-          <li class="dropdown">
-            <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="pficon pficon-user"></span><span class="dropdown-title">Brian Johnson <b class="caret"></b></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#0">Link</a></li>
-              <li><a href="#0">Another link</a></li>
-              <li><a href="#0">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-submenu"><a tabindex="-1" href="#0">More options</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#0">Link</a></li>
-                  <li><a href="#0">Another link</a></li>
-                  <li><a href="#0">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#0">Separated link</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#0">One more separated link</a></li>
-                </ul>
-              </li>
-              <li class="divider"></li>
-              <li><a href="#0">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-primary">
-          <li><a href="#0">First Link</a></li>
-          <li class="active"><a href="#0">Another Link</a></li>
-          <li><a href="#0">And Another</a></li>
-          <li><a href="#0">As a General Rule</a></li>
-          <li><a href="#0">Five to Seven Links</a></li>
-          <li><a href="#0">Is Good</a></li>
-        </ul>
-      </div>
-    </nav>
-    <header>
-      <div class="container-fluid">
-        <div class="row">
-          <h1>Hello World!</h1>
+          </nav>
+        </div>
+        <div class="pf-c-page__header-tools">
+          <div class="pf-c-page__header-tools-group pf-m-icons">
+            <button class="pf-c-button pf-m-plain" aria-label="Alerts"><i class="fas fa-bell" aria-hidden="true"></i></button>
+            <button class="pf-c-button pf-m-plain" aria-label="Settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+          </div>
+          <div class="pf-c-page__header-tools-group">
+            <div class="pf-c-dropdown">
+              <button class="pf-c-dropdown__toggle pf-m-mobile pf-m-plain"></button>
+            </div>
+            <div class="pf-m-user">
+              <div class="pf-c-dropdown">
+                <button class="pf-c-dropdown__toggle pf-m-mobile pf-m-plain"></button>
+              </div>
+            </div><img class="pf-c-avater" src="/assets/images/avatar.png" alt="Avatar image" style="height: 30px; border-radius: 50%;">
+          </div>
         </div>
       </div>
-    </header>
+      <main class="pf-c-page__main" role="main"><a id="main-content-page-layout"></a>
+        <section class="pf-c-page__main-section pf-m-light">
+          <div class="pf-c-content">
+            <h1>Main Title</h1>
+            <p>Body text</p>
+          </div>
+        </section>
+        <section class="pf-c-page__main-section">
+          <div class="pf-l-gallery pf-m-gutter">
+            <div class="pf-l-gallery__item">
+              <div class="pf-c-card">
+                <div class="pf-c-card__body">This is a card body with 14px font</div>
+              </div>
+            </div>
+            <div class="pf-l-gallery__item">
+              <div class="pf-c-card">
+                <div class="pf-c-card__body">This is a card body with 14px font</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

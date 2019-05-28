@@ -3,9 +3,22 @@ html(lang='en')
   include includes/header.pug
 
   body
-    include includes/navigation.pug
+    h1.pf-screen-reader Prototype template
+    .pf-c-page
+      a.pf-c-skip-to-content.pf-c-button.pf-m-primary(href='#main-content-page-layout')
+      include includes/navigation.pug
+      main.pf-c-page__main(role='main')
+        a#main-content-page-layout
+        section.pf-c-page__main-section.pf-m-light
+          .pf-c-content
+            h1 Main Title
+            p Body text
+        section.pf-c-page__main-section
+          .pf-l-gallery.pf-m-gutter
+            .pf-l-gallery__item
+              .pf-c-card
+                .pf-c-card__body This is a card body with 14px font
+            .pf-l-gallery__item
+              .pf-c-card
+                .pf-c-card__body This is a card body with 14px font
 
-    header
-      .container-fluid
-        .row
-          h1 Hello World!

@@ -1,65 +1,28 @@
-nav.navbar.navbar-default.navbar-pf(role='navigation')
-  .navbar-header
-    button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-collapse-1')
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    a.navbar-brand(href='/')
-      img(src='/assets/img/brand.svg' alt='PatternFly Enterprise Application')
-  .collapse.navbar-collapse.navbar-collapse-1
-    ul.nav.navbar-nav.navbar-utility
-      li.dropdown
-        button#horizontalDropdownMenu1.btn.btn-link.nav-item-iconic(data-toggle='dropdown' aria-haspopup='true' aria-expanded='true')
-          span.fa.pficon-help.dropdown-title(title='Help')
-        ul.dropdown-menu(aria-labelledby='horizontalDropdownMenu1')
-          li
-            a(href='#0') Help
-          li
-            a(href='#0') About
-      li.dropdown
-        button.btn.btn-link.dropdown-toggle(data-toggle='dropdown')
-          span.pficon.pficon-user
-          span.dropdown-title
-            | Brian Johnson 
-            b.caret
-        ul.dropdown-menu
-          li
-            a(href='#0') Link
-          li
-            a(href='#0') Another link
-          li
-            a(href='#0') Something else here
-          li.divider
-          li.dropdown-submenu
-            a(tabindex='-1' href='#0') More options
-            ul.dropdown-menu
-              li
-                a(href='#0') Link
-              li
-                a(href='#0') Another link
-              li
-                a(href='#0') Something else here
-              li.divider
-              li.dropdown-header Nav header
-              li
-                a(href='#0') Separated link
-              li.divider
-              li
-                a(href='#0') One more separated link
-          li.divider
-          li
-            a(href='#0') One more separated link
-    ul.nav.navbar-nav.navbar-primary
-      li
-        a(href='#0') First Link
-      li.active
-        a(href='#0') Another Link
-      li
-        a(href='#0') And Another
-      li
-        a(href='#0') As a General Rule
-      li
-        a(href='#0') Five to Seven Links
-      li
-        a(href='#0') Is Good
+.pf-c-page__header(role='banner')
+  .pf-c-page__header-brand
+    a.pf-c-page__header-brand-link
+      img.pf-c-brand(src='/assets/images/AdamJJolicoeur_brand.png', alt='brand logo')
+  .pf-c-page__header-nav
+    nav.pf-c-nav.pf-m-end#page-layout-horizontal-nav(aria-label="Global navigation")
+      ul.pf-c-nav__horizontal-list
+        li.pf-c-nav__item
+          a.pf-c-nav__link(href='#') Link
+        li.pf-c-nav__item
+          a.pf-c-nav__link(href='#') Link
+        li.pf-c-nav__item
+          a.pf-c-nav__link(href='#') Link
+        li.pf-c-nav__item
+          a.pf-c-nav__link(href='#') Link
+  .pf-c-page__header-tools
+    .pf-c-page__header-tools-group.pf-m-icons
+      button.pf-c-button.pf-m-plain(aria-label='Alerts')
+        i.fas.fa-bell(aria-hidden='true')
+      button.pf-c-button.pf-m-plain(aria-label='Settings')
+        i.fas.fa-cog(aria-hidden='true')
+    .pf-c-page__header-tools-group
+      .pf-c-dropdown
+        button.pf-c-dropdown__toggle.pf-m-mobile.pf-m-plain
+      .pf-m-user
+        .pf-c-dropdown
+          button.pf-c-dropdown__toggle.pf-m-mobile.pf-m-plain
+      img.pf-c-avater(src='/assets/images/avatar.png', alt='Avatar image', style='height: 30px; border-radius: 50%;')
