@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
+var clean = require('gulp-clean');
 var cssnano = require('cssnano');
 var header = require('gulp-header');
 var postcss = require('gulp-postcss');
@@ -84,7 +85,22 @@ gulp.task('browserSync', function () {
   })
 });
 
-gulp.task('build', ['sass', 'js', 'views']);
+gulp.task('copy-source', ['clean-dist'], function () {
+  gulp.src('./README.md').pipe(gulp.dest('./dist'));
+  gulp.src('./package.json').pipe(gulp.dest('./dist'));
+  gulp.src('./manifest.json').pipe(gulp.dest('./dist'));
+  gulp.src('./css/*.*').pipe(gulp.dest('./dist/css'));
+  gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
+  gulp.src('./assets/**/*.*').pipe(gulp.dest('./dist/assets/'));
+  gulp.src('./*.html').pipe(gulp.dest('./dist'));
+});
+
+gulp.task('clean-dist', function () {
+  return gulp.src("dist/", {read: false})
+    .pipe(clean());
+});
+
+gulp.task('build', ['copy-source']);
 
 // Dev task with browserSync
 gulp.task('serve', ['sass'], function () {
