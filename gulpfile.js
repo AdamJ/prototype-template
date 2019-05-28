@@ -43,8 +43,7 @@ gulp.task('css', ['sass'], function() {
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./css'))
-    .pipe(clean('./css/site.css'));
+    .pipe(gulp.dest('./css'));
 });
 
 // compile custom javascript file
@@ -129,4 +128,5 @@ gulp.task('serve', ['css', 'js'], function () {
 });
 
 // Run everything
+// @ts-ignore
 gulp.task('default', ['css', 'js', 'views']);
