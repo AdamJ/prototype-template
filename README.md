@@ -8,6 +8,7 @@ This is a template for creating prototypes. If you wish to use it, please downlo
 
 **Features**
 
+- Compile Pug to HTML
 - Compile SCSS to CSS
 - Browsersync for local development
 - Notifications on successful builds (you can turn this off)
