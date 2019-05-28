@@ -84,6 +84,8 @@ gulp.task('browserSync', function () {
   })
 });
 
+gulp.task('build', ['sass', 'js', 'views']);
+
 // Dev task with browserSync
 gulp.task('serve', ['sass'], function () {
   browserSync.init({
