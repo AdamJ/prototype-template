@@ -1,6 +1,6 @@
 {
   "name": "prototype-template",
-  "version": "0.6.1",
+  "version": "0.8.1",
   "description": "A template for creating prototypes",
   "homepage": "https://www.adamjolicoeur.com/prototype-template",
   "main": "index.js",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
-    "@patternfly/patternfly": "^2.8.1"
+    "@patternfly/patternfly": "^2.8.1",
+    "natives": "^1.1.6"
   }
 }
