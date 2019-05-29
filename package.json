@@ -8,6 +8,13 @@
     "start": "gulp serve",
     "build": "gulp"
   },
+  "release": {
+    "branch": "master",
+    "tagFormat": "v${version}"
+  },
+  "plugins": [
+    "@semantic-release/release-notes-generator"
+  ],
   "keywords": [
     "prototype",
     "template"
@@ -29,11 +36,13 @@
     "gulp-pug": "4.0.1",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.1",
-    "gulp-sourcemaps": "2.6.5"
+    "gulp-sourcemaps": "2.6.5",
+    "semantic-release": "^15.13.14"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "@patternfly/patternfly": "^2.8.1",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "natives": "^1.1.6"
   }
 }
