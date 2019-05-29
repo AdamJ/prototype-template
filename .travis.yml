@@ -9,17 +9,6 @@ notifications:
 node_js:
   - '10'
 
-jobs:
-  include:
-    # Define the release stage that runs semantic-release
-    - stage: release
-      node_js: lts/*
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npm semantic-release
-
 env:
   global:
     - COMMIT_AUTHOR_EMAIL: "mindreeper2420@gmail.com"
