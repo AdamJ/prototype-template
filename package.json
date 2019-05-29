@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
-    "@patternfly/patternfly": "^2.8.1",
+    "@patternfly/patternfly": "^2.8.2",
     "natives": "^1.1.6"
   }
 }
