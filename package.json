@@ -29,7 +29,7 @@
     "autoprefixer": "8.6.3",
     "browser-sync": "^2.24.6",
     "cssnano": "4.1.10",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-clean": "0.4.0",
     "gulp-header": "2.0.7",
     "gulp-postcss": "8.0.0",
