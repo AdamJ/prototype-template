@@ -38,7 +38,7 @@ gulp.task('css', ['sass'], function() {
     autoprefixer({browsers: ['last 1 version']}),
     cssnano()
   ];
-  return gulp.src('./css/site.css')
+  return gulp.src(['./css/site.css', './css/base.css'])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write())
@@ -93,7 +93,8 @@ gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./README.md').pipe(gulp.dest('./dist'));
   gulp.src('./package.json').pipe(gulp.dest('./dist'));
   gulp.src('./manifest.json').pipe(gulp.dest('./dist'));
-  gulp.src('./css/*.*').pipe(gulp.dest('./dist/css'));
+  gulp.src('./favicon.*').pipe(gulp.dest('./dist'));
+  gulp.src('./css/*.min.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
   gulp.src('./assets/**/*.*').pipe(gulp.dest('./dist/assets/'));
   gulp.src('./*.html').pipe(gulp.dest('./dist'));
