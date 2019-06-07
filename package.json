@@ -23,8 +23,12 @@
   "author": "Adam J. Jolicoeur",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@patternfly/patternfly": "^2.8.2"
+  },
+  "dependencies": {
     "autoprefixer": "9.5.1",
-    "browser-sync": "^2.24.6",
+    "browser-sync": "^2.26.7",
     "cssnano": "4.1.10",
     "gulp": "3.9.1",
     "gulp-clean": "0.4.0",
@@ -34,11 +38,7 @@
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
+    "natives": "^1.1.6",
     "semantic-release": "^15.13.14"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.2",
-    "@patternfly/patternfly": "^2.8.2",
-    "natives": "^1.1.6"
   }
 }

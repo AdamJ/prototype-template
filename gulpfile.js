@@ -22,20 +22,20 @@ var banner = ['/*!\n',
   ''
 ].join('');
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(header(banner, { pkg: pkg }))
-  .pipe(gulp.dest('css'))
-  .pipe(browserSync.reload({
-    stream: true
-  }));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // @ts-ignore
-gulp.task('css', ['sass'], function() {
+gulp.task('css', ['sass'], function () {
   var plugins = [
-    autoprefixer({browsers: ['last 1 version']}),
+    autoprefixer({ browsers: ['last 1 version'] }),
     cssnano()
   ];
   return gulp.src(['./css/site.css', './css/base.css'])
@@ -47,23 +47,23 @@ gulp.task('css', ['sass'], function() {
 });
 
 // compile custom javascript file
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src("dev/js/*.js")
-  .pipe(header(banner, { pkg: pkg }))
-  .pipe(gulp.dest('js'))
-  .pipe(browserSync.reload({
-    stream: true
-  }));
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(gulp.dest('js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // compile pug templates
 gulp.task('views', function () {
   return gulp.src('./src/*.pug')
-  .pipe(pug({
-    doctype: 'html',
-    pretty: true
-  }))
-  .pipe(gulp.dest('./'));
+    .pipe(pug({
+      doctype: 'html',
+      pretty: true
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 // Configure the browserSync task
@@ -94,6 +94,7 @@ gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./package.json').pipe(gulp.dest('./dist'));
   gulp.src('./manifest.json').pipe(gulp.dest('./dist'));
   gulp.src('./favicon.*').pipe(gulp.dest('./dist'));
+  gulp.src('./css/patternfly-addons.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./css/*.min.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
   gulp.src('./assets/**/*.*').pipe(gulp.dest('./dist/assets/'));
@@ -101,7 +102,7 @@ gulp.task('copy-source', ['clean-dist'], function () {
 });
 
 gulp.task('clean-dist', function () {
-  return gulp.src("dist/", {read: false})
+  return gulp.src("dist/", { read: false })
     .pipe(clean());
 });
 
