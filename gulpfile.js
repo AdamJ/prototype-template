@@ -34,8 +34,10 @@ gulp.task('sass', function () {
 
 // @ts-ignore
 gulp.task('css', ['sass'], function () {
+  const autoprefixer = require('autoprefixer')
+
   var plugins = [
-    autoprefixer({ browsers: ['last 1 version'] }),
+    autoprefixer(),
     cssnano()
   ];
   return gulp.src(['./css/site.css', './css/base.css'])

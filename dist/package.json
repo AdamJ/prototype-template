@@ -1,6 +1,6 @@
 {
-  "name": "prototype-template",
-  "version": "0.12.0",
+  "name": "prototypetemplate",
+  "version": "0.14.0",
   "description": "A template for creating prototypes",
   "homepage": "https://www.adamjolicoeur.com/prototype-template",
   "main": "index.js",
@@ -27,7 +27,7 @@
     "@patternfly/patternfly": "^2.8.2"
   },
   "dependencies": {
-    "autoprefixer": "9.5.1",
+    "autoprefixer": "^9.6.0",
     "browser-sync": "^2.26.7",
     "cssnano": "4.1.10",
     "gulp": "3.9.1",
@@ -39,6 +39,6 @@
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
     "natives": "^1.1.6",
-    "semantic-release": "^15.13.14"
+    "semantic-release": "^15.13.16"
   }
 }

@@ -80,6 +80,8 @@ When building the site using Travis or Netlify (or by manually publishing), `gul
     README.md
 ```
 
+To run a complete build with release, run `gulp && gulp build` in your prompt.
+
 ## Build Features
 
 - Compile Pug to HTML
