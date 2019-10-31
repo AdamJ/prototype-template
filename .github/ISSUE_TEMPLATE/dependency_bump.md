@@ -2,8 +2,9 @@
 name: Dependency bump
 about: Update a project dependency
 title: "[DEPENDENCY]"
-labels: dependency
+labels: dependencies
 assignees: 'mindreeper2420'
+project: 'Template Maintenance'
 
 ---
 
