@@ -38,7 +38,10 @@
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
+    "lodash": "4.17.15",
+    "lodash.template": "4.5.0",
     "natives": "^1.1.6",
-    "semantic-release": "^15.13.16"
+    "semantic-release": "^15.13.28",
+    "set-value": "3.0.1"
   }
 }
