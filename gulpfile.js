@@ -91,6 +91,11 @@ gulp.task('sass-watch', ['css'], function (done) {
 });
 
 // @ts-ignore
+gulp.task('copy-fonts', function (done) {
+  gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**').pipe(gulp.dest('./css/assets/fonts/webfonts'));
+});
+
+// @ts-ignore
 gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./README.md').pipe(gulp.dest('./dist'));
   gulp.src('./package.json').pipe(gulp.dest('./dist'));
@@ -100,6 +105,7 @@ gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./css/*.min.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
   gulp.src('./assets/**/*.*').pipe(gulp.dest('./dist/assets/'));
+  gulp.src('./css/assets/fonts/webfonts/**').pipe(gulp.dest('./dist/css/assets/fonts/webfonts'));
   gulp.src('./*.html').pipe(gulp.dest('./dist'));
 });
 
