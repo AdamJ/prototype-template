@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.com/mindreeper2420/prototype-template.svg?branch=master)](https://travis-ci.com/mindreeper2420/prototype-template)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5947aa18-1f6e-4409-8686-129c225f7781/deploy-status)](https://app.netlify.com/sites/prototypetemplate/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/07a28538-fc7e-42e2-8bda-c86fc96cc586/deploy-status)](https://app.netlify.com/sites/pf-prototype-template/deploys)
 
 # Prototype Template
 
@@ -38,6 +36,14 @@ The `navigation.pug` file controls the navigation layout and content.
   assets/
     images/
   css/
+    assets/
+      fonts/
+        webfonts/
+          *.eot
+          *.svg
+          *.tff
+          *.woff
+          *.woff2
     base.css
     base.min.css
     patternfly.min.css
@@ -67,6 +73,14 @@ When building the site using Travis or Netlify (or by manually publishing), `gul
     assets/
       images/
     css/
+      assets/
+        fonts/
+          webfonts/
+            *.eot
+            *.svg
+            *.tff
+            *.woff
+            *.woff2
       base.min.css
       patternfly.min.css
       site.min.css
@@ -86,6 +100,7 @@ To run a complete build with release, run `gulp && gulp build` in your prompt.
 
 - Compile Pug to HTML
 - Compile SCSS to CSS
+- Copy Font Awesome webfonts to local environment
 - Browsersync for local development
 - Notifications on successful builds (you can turn this off)
 - Automatic headers for CSS/JS files
