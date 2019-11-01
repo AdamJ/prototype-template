@@ -1,6 +1,6 @@
 {
   "name": "prototypetemplate",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "A template for creating prototypes",
   "homepage": "https://www.adamjolicoeur.com/prototype-template",
   "main": "index.js",
